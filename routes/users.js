@@ -2,8 +2,10 @@ var express = require("express");
 var router = express.Router();
 var cors = require("cors");
 const { mongoDb, mongoClient, dbUrl } = require("../dbConfig");
-
+var app = express();
 //checking if a user already exists or not
+
+// app.use(cors({ origin: "*" }));
 
 router.get("/:sub", async (req, res) => {
   let sub = req.params.sub;
